@@ -1,5 +1,2 @@
-require "mls_2017_standings_cli_app/version"
-
-module Mls2017StandingsCliApp
-  # Your code goes here...
-end
+require_relative "mls_2017_standings_cli_app/version"
+require_relative './mls_2017_standings_cli_app/cli'
