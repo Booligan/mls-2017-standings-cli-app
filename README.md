@@ -1,8 +1,6 @@
-# Mls2017StandingsCliApp
+# MLS 2017 Standings
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mls_2017_standings_cli_app`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby gem provides a CLI to view the current standings of teams in Major League Soccer during the 2017 season.
 
 ## Installation
 
@@ -33,4 +31,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/'amayanga90-85487'/mls_2017_standings_cli_app.
-
