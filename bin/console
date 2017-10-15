@@ -11,4 +11,4 @@ require "mls_2017_standings_cli_app"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+IRB.start

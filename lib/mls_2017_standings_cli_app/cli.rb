@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Mls2017StandingsCliApp::CLI
 
   def call
