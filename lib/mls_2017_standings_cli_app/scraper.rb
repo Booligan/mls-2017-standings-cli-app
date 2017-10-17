@@ -1,33 +1,13 @@
-class Mls2017StandingsCliApp::Scraper
+class Scraper
 
-  def self.scrape_mls_teams
+  def self.get_page
     html = open("https://www.mlssoccer.com/standings")
-    doc = Nokogiri::HTML(html)
-    table = doc.css('.standings_table a')
-    teams = []
-    teams_hash_array = []
+    Nokogiri::HTML(html)
+  end
 
-    table.each do |team|
-        teams << team.text
-    end
-
-    teams.delete("PPG")
-    teams.delete("GP")
-    teams.delete("W")
-    teams.delete("L")
-    teams.delete("T")
-    teams.delete("GF")
-    teams.delete("GA")
-    teams.delete("GD")
-    teams.delete("")
-
-    teams.each do|team|
-      team_hash = {:name => team}
-      teams_hash_array << team_hash
-    end
-    teams_hash_array
+  def self.scrape_teams
+    html = self.get_page
+    name = html.css('table.standings_table tr td a')
     binding.pry
- end
-
-
+  end
 end

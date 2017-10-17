@@ -10,20 +10,22 @@ class Mls2017StandingsCliApp::CLI
   end
 
   def start_conf
-    puts "1. Eastern Conference."
-    puts "2. Western Conference."
-    puts ""
+    puts "\n1. Eastern Conference."
+    puts "2. Western Conference.\n\n"
+
     puts "Enter '1' for the MLS Eastern Conference."
     puts "Enter '2' for the MLS Wastern Conference."
     input = nil
     until input == 'exit'
-      puts "Select a conference or type 'exit': "
+      puts "\nSelect a conference or type 'exit': "
       input = gets.strip.downcase
-      case input
+      case input.downcase
       when "1"
         eastern_conf
       when "2"
         western_conf
+      when "exit"
+        exit
       else
         puts "Not Valid. Please select a conference or type 'exit'. "
       end
@@ -31,7 +33,7 @@ class Mls2017StandingsCliApp::CLI
   end
 
   def eastern_conf
-    puts "More info on the MLS Eastern Conference"
+   puts "More info on the MLS Eastern Conference"
   end
 
   def western_conf

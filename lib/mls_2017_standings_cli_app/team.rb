@@ -1,4 +1,3 @@
-class Mls2017StandingsCliApp::Team
-
+class Team
 
 end
