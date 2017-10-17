@@ -21,7 +21,7 @@ class Team
   end
 
   def self.western_conf
-    self.all[11..23]
+    self.all[11..21]
   end
 
 end

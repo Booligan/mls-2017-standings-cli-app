@@ -8,7 +8,8 @@ class Scraper
   def self.scrape_teams
     html = self.get_page
     name = html.css('table.standings_table tr td a')
-
+    binding.pry
+    #return array of teams_hash
   end
 
   def self.create_teams
