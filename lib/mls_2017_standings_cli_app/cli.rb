@@ -1,7 +1,7 @@
 class Mls2017StandingsCliApp::CLI
 
   def call
-    # title bar
+
     puts "    ********************".colorize(:blue)
     puts "    *MLS 2017 Standings*".colorize(:red)
     puts "    ********************".colorize(:blue)
