@@ -1,10 +1,14 @@
 class Team
-  attr_accessor :name, :games_played, :wins, :loses, :ties
+  attr_accessor :name, :games_played, :wins, :losses, :ties
 
   @@all = []
 
   def initialize(team)
-    team.each_key{|k| self.send("#{k}=", team[k])}
+    @name = team[:name]
+    @games_played = team[:games_played]
+    @wins = team[:wins]
+    @losses = team[:losses]
+    @ties = team[:ties]
     @@all << self
   end
 
@@ -13,7 +17,7 @@ class Team
   end
 
   def self.create_from_scrape(team)
-    Team.new(team)
+    self.new(team)
   end
 
   def self.eastern_conf
