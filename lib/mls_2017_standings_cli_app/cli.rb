@@ -34,10 +34,14 @@ class Mls2017StandingsCliApp::CLI
 
   def eastern_conf
    puts "More info on the MLS Eastern Conference"
+   teams = Team.eastern_conf
+   teams.each{|team| puts team.name}
   end
 
   def western_conf
     puts "More info on the MLS Western Conference"
+    teams = Team.western_conf
+    teams.each{|team| puts team.name}
   end
 
 end

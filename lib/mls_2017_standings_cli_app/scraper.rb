@@ -8,6 +8,12 @@ class Scraper
   def self.scrape_teams
     html = self.get_page
     name = html.css('table.standings_table tr td a')
-    binding.pry
+
   end
+
+  def self.create_teams
+    teams = self.scrape_teams
+    teams.each{|team| Team.create_from_scrape(team)}
+  end
+
 end
