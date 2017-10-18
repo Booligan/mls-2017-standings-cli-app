@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Drill Down to MLS conference standings and team record.
 
 ## Development
 
