@@ -48,8 +48,18 @@ class Mls2017StandingsCliApp::CLI
     end
     puts "\nSelect 1-11 to get more information on the team, or exit:"
     input = nil
-    input = gets.strip.to_i
-    east_team_record(input)
+
+    until input == 'exit' || input.to_i.between?(1, 11)
+      input = gets.strip.downcase
+      case
+      when input.to_i.between?(1, 11)
+        east_team_record(input.to_i)
+      when input.downcase == "exit"
+        exit
+      else
+        puts "Not a valid team. Please select a valid team or 'exit'. "
+      end
+    end
   end
 
   def western_conf
@@ -64,8 +74,18 @@ class Mls2017StandingsCliApp::CLI
     end
     puts "\nSelect 1-11 to get more information on the team:"
     input = nil
-    input = gets.strip.to_i
-    west_team_record(input)
+
+    until input == 'exit' || input.to_i.between?(1, 11)
+      input = gets.strip.downcase
+      case
+      when input.to_i.between?(1, 11)
+        west_team_record(input.to_i)
+      when input.downcase == "exit"
+        exit
+      else
+        puts "Not a valid team. Please select a valid team or 'exit'. "
+      end
+    end
   end
 
   def east_team_record(input)
