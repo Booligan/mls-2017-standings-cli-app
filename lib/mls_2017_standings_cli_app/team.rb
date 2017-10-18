@@ -17,21 +17,11 @@ class Team
   end
 
   def self.eastern_conf
-    i = 1
-    teams= self.all[0..10]
-    teams.each do |team|
-      puts  "#{i}. #{team.name}"
-      i += 1
-    end
+    self.all[0..10]
   end
 
   def self.western_conf
-    i = 1
-    teams = self.all[11..22]
-    teams.each do |team|
-      puts  "#{i}. #{team.name}"
-      i += 1
-    end
+    self.all[11..22]
   end
 
 end
