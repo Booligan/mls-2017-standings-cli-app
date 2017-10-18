@@ -6,14 +6,34 @@ class Mls2017StandingsCliApp::CLI
     puts "    *MLS 2017 Standings*".colorize(:red)
     puts "    ********************".colorize(:blue)
     Scraper.create_teams
-    start_conf
+    start_menu
   end
 
-  def start_conf
+  def start_menu
     puts "\n1. Eastern Conference."
     puts "2. Western Conference.\n\n"
-
     conf_menu
+  end
+
+  def conf_menu
+    puts "Enter '1' for the MLS Eastern Conference."
+    puts "Enter '2' for the MLS Western Conference."
+    puts "\nSelect a conference or type 'exit': "
+    input = nil
+
+    until input == 'exit' || input == '1' || input == '2'
+      input = gets.strip.downcase
+      case input.downcase
+      when "1"
+        eastern_conf
+      when "2"
+        western_conf
+      when "exit"
+        exit
+      else
+        puts "Not Valid. Please select a conference or type 'exit'. "
+      end
+    end
   end
 
   def eastern_conf
@@ -46,27 +66,6 @@ class Mls2017StandingsCliApp::CLI
     input = nil
     input = gets.strip.to_i
     west_team_record(input)
-  end
-
-  def conf_menu
-    puts "Enter '1' for the MLS Eastern Conference."
-    puts "Enter '2' for the MLS Western Conference."
-    puts "\nSelect a conference or type 'exit': "
-    input = nil
-
-    until input == 'exit' || input == '1' || input == '2'
-      input = gets.strip.downcase
-      case input.downcase
-      when "1"
-        eastern_conf
-      when "2"
-        western_conf
-      when "exit"
-        exit
-      else
-        puts "Not Valid. Please select a conference or type 'exit'. "
-      end
-    end
   end
 
   def east_team_record(input)
