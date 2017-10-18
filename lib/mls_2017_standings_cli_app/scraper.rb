@@ -22,14 +22,13 @@ class Scraper
       teams_hash_array << team_hash
     end
       teams_hash_array.delete_at(0)
-      teams_hash_array.delete_at(12)
+      teams_hash_array.delete_at(11)
       teams_hash_array
   end
 
   def self.create_teams
     teams = self.scrape_teams
     teams.each{|team| Team.create_from_scrape(team)}
-    binding.pry
   end
 
 end

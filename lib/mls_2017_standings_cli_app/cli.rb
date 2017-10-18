@@ -5,8 +5,9 @@ class Mls2017StandingsCliApp::CLI
     puts "    ********************".colorize(:blue)
     puts "    *MLS 2017 Standings*".colorize(:red)
     puts "    ********************".colorize(:blue)
-
+    Scraper.create_teams
     start_conf
+
   end
 
   def start_conf
@@ -33,15 +34,17 @@ class Mls2017StandingsCliApp::CLI
   end
 
   def eastern_conf
-   puts "More info on the MLS Eastern Conference"
-   teams = Team.eastern_conf
-   teams.each{|team| puts team.name}
+    system "clear"
+    puts "     MLS Eastern Conference".colorize(:blue)
+    puts "     **********************".colorize(:blue)
+    Team.eastern_conf
   end
 
   def western_conf
-    puts "More info on the MLS Western Conference"
-    teams = Team.western_conf
-    teams.each{|team| puts team.name}
+    system "clear"
+    puts "     MLS Western Conference".colorize(:red)
+    puts "     **********************".colorize(:red)
+    Team.western_conf
   end
 
 end

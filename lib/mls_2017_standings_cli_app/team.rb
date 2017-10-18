@@ -3,12 +3,8 @@ class Team
 
   @@all = []
 
-  def initialize(team)
-    @name = team[:name]
-    @games_played = team[:games_played]
-    @wins = team[:wins]
-    @losses = team[:losses]
-    @ties = team[:ties]
+  def initialize(team_hash)
+    team_hash.each_key{|k| self.send("#{k}=", team_hash[k])}
     @@all << self
   end
 
@@ -21,11 +17,21 @@ class Team
   end
 
   def self.eastern_conf
-    self.all[0..10]
+    i = 1
+    teams= self.all[0..10]
+    teams.each do |team|
+      puts  "#{i}. #{team.name}"
+      i += 1
+    end
   end
 
   def self.western_conf
-    self.all[11..21]
+    i = 1
+    teams = self.all[11..22]
+    teams.each do |team|
+      puts  "#{i}. #{team.name}"
+      i += 1
+    end
   end
 
 end
