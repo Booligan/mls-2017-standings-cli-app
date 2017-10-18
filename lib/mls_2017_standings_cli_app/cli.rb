@@ -12,10 +12,6 @@ class Mls2017StandingsCliApp::CLI
   def start_menu
     puts "\n1. Eastern Conference."
     puts "2. Western Conference.\n\n"
-    conf_menu
-  end
-
-  def conf_menu
     puts "Enter '1' for the MLS Eastern Conference."
     puts "Enter '2' for the MLS Western Conference."
     puts "\nSelect a conference or type 'exit': "
@@ -46,18 +42,20 @@ class Mls2017StandingsCliApp::CLI
       puts  "#{i}. #{team.name}"
       i += 1
     end
-    puts "\nSelect 1-11 to get more information on the team, or exit:"
+    puts "\nSelect 1-11 to get more information on the team, 'switch' to switch conference, or exit:"
     input = nil
 
-    until input == 'exit' || input.to_i.between?(1, 11)
+    until input == 'exit' || input == 'switch' || input.to_i.between?(1, 11)
       input = gets.strip.downcase
       case
       when input.to_i.between?(1, 11)
         east_team_record(input.to_i)
+      when input.downcase == "switch"
+        call
       when input.downcase == "exit"
         exit
       else
-        puts "Not a valid team. Please select a valid team or 'exit'. "
+        puts "Not a valid team. Please select a valid team or, 'switch' or 'exit'. "
       end
     end
   end
@@ -72,18 +70,20 @@ class Mls2017StandingsCliApp::CLI
       puts  "#{i}. #{team.name}"
       i += 1
     end
-    puts "\nSelect 1-11 to get more information on the team:"
+    puts "\nSelect 1-11 to get more information on the team, 'switch' to switch conference, or exit:"
     input = nil
 
-    until input == 'exit' || input.to_i.between?(1, 11)
+    until input == 'exit' || input == 'switch'||input.to_i.between?(1, 11)
       input = gets.strip.downcase
       case
       when input.to_i.between?(1, 11)
         west_team_record(input.to_i)
+      when input.downcase == "switch"
+        call
       when input.downcase == "exit"
         exit
       else
-        puts "Not a valid team. Please select a valid team or 'exit'. "
+        puts "Not a valid team. Please select a valid team or, 'switch' or 'exit'. "
       end
     end
   end
@@ -97,6 +97,19 @@ class Mls2017StandingsCliApp::CLI
     puts "Wins: #{team.wins}"
     puts "Losses: #{team.losses}"
     puts "Ties: #{team.ties}"
+    puts "\n Type 'MLS' to restart CLI or 'exit' to exit"
+
+    until input == 'exit' || input == 'mls'
+      input = gets.strip.downcase
+      case input.downcase
+      when "exit"
+        exit
+      when "mls"
+        call
+      else
+        puts "Not Valid. Please select type 'MLS' or 'exit'. "
+      end
+    end
   end
 
   def west_team_record(input)
@@ -108,6 +121,19 @@ class Mls2017StandingsCliApp::CLI
     puts "Wins: #{team.wins}"
     puts "Losses: #{team.losses}"
     puts "Ties: #{team.ties}"
+    puts "\n Type 'MLS' to restart CLI or 'exit' to exit"
+
+    until input == 'exit' || input == 'mls'
+      input = gets.strip.downcase
+      case input.downcase
+      when "exit"
+        exit
+      when "mls"
+        call
+      else
+        puts "Not Valid. Please select type 'MLS' or 'exit'. "
+      end
+    end
   end
 
 end
