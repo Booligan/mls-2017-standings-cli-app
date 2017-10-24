@@ -18,6 +18,7 @@ class Scraper
       ties = team.css('[data-title="Ties"]').text
       name.slice!('x - ')
       name.slice!('s - ')
+      name.slice!('y - ')
       team_hash = {:name => name, :games_played => games_played, :wins => wins, :losses => losses, :ties => ties}
       teams_hash_array << team_hash
     end
