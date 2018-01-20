@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "mls_standings_cli_app"
+
+MlsStandingsCliApp::CLI.new.call

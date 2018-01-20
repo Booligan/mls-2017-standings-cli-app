@@ -1,12 +1,12 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mls_2017_standings_cli_app/version'
+require 'mls_standings_cli_app/version'
 
 
 Gem::Specification.new do |spec|
-  spec.name          = "mls_2017_standings_cli_app"
-  spec.version       = Mls2017StandingsCliApp::VERSION
+  spec.name          = "mls_standings_cli_app"
+  spec.version       = MlsStandingsCliApp::VERSION
   spec.authors       = ["'Alberto Mayanga'"]
   spec.email         = ["'amayanga90@yahoo.com'"]
 
