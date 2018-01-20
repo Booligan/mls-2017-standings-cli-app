@@ -11,7 +11,7 @@ class Scraper
     teams_hash_array = []
 
     table.each do |team|
-      name = team.css('[data-title="Club"]').text
+      name = team.css('[data-title="Club"] .hide-on-mobile-inline').text
       games_played = team.css('[data-title="Games Played"]').text
       wins = team.css('[data-title="Wins"]').text
       losses = team.css('[data-title="Losses"]').text

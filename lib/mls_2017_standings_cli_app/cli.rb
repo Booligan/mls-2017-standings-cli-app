@@ -7,28 +7,28 @@ class Mls2017StandingsCliApp::CLI
 
   def start_menu
     system "clear"
-    puts "    ********************".colorize(:blue)
-    puts "    *MLS 2017 Standings*".colorize(:red)
-    puts "    ********************".colorize(:blue)
+    puts "    ***************".colorize(:blue)
+    puts "    *MLS Standings*".colorize(:red)
+    puts "    ***************".colorize(:blue)
 
     puts "\n1. Eastern Conference."
     puts "2. Western Conference.\n\n"
     puts "Enter '1' for the MLS Eastern Conference."
     puts "Enter '2' for the MLS Western Conference."
-    puts "\nSelect a conference or type 'exit': "
+    puts "\nSelect a conference or type 'e' to exit: "
     input = nil
 
-    until input == 'exit' || input == '1' || input == '2'
+    until input == 'e' || input == '1' || input == '2'
       input = gets.strip.downcase
       case input.downcase
       when "1"
         eastern_conf
       when "2"
         western_conf
-      when "exit"
+      when "e"
         exit
       else
-        puts "Not Valid. Please select a conference or type 'exit': "
+        puts "Not Valid. Please select a conference: "
       end
     end
   end
@@ -43,20 +43,20 @@ class Mls2017StandingsCliApp::CLI
       puts  "#{i}. #{team.name}"
       i += 1
     end
-    puts "\nSelect 1-11 to get more information on the team, 'switch' to switch conference, or exit:"
+    puts "\nSelect 1-11 to get more information on the team, 's' to switch conference, or exit:"
     input = nil
 
-    until input == 'exit' || input == 'switch' || input.to_i.between?(1, 11)
+    until input == 'et' || input == 's' || input.to_i.between?(1, 11)
       input = gets.strip.downcase
       case
       when input.to_i.between?(1, 11)
         east_team_record(input.to_i)
-      when input.downcase == "switch"
+      when input.downcase == "s"
         western_conf
-      when input.downcase == "exit"
+      when input.downcase == "e"
         exit
       else
-        puts "Not a valid team. Please select a valid team or, 'switch' or 'exit': "
+        puts "Not a valid team. Please select a valid team or, 's' to switch or 'e' to exit: "
       end
     end
   end
@@ -71,20 +71,20 @@ class Mls2017StandingsCliApp::CLI
         puts  "#{i}. #{team.name}"
         i += 1
     end
-    puts "\nSelect 1-11 to get more information on the team, 'switch' to switch conference, or exit:"
+    puts "\nSelect 1-11 to get more information on the team, 's' to switch conference, or exit:"
     input = nil
 
-    until input == 'exit' || input == 'switch'||input.to_i.between?(1, 11)
+    until input == 'e' || input == 's'||input.to_i.between?(1, 11)
       input = gets.strip.downcase
       case
       when input.to_i.between?(1, 11)
         west_team_record(input.to_i)
-      when input.downcase == "switch"
+      when input.downcase == "s"
         eastern_conf
-      when input.downcase == "exit"
+      when input.downcase == "e"
         exit
       else
-        puts "Not a valid team. Please select a valid team or, 'switch' or 'exit': "
+        puts "Not a valid team. Please select a valid team or, 's' or 'e': "
       end
     end
   end
@@ -98,17 +98,17 @@ class Mls2017StandingsCliApp::CLI
     puts "Wins: #{team.wins}"
     puts "Losses: #{team.losses}"
     puts "Ties: #{team.ties}"
-    puts "\n Type 'MLS' to restart CLI or 'exit' to exit:"
+    puts "\n Type 'MLS' to restart CLI or 'e' to exit:"
 
-    until input == 'exit' || input == 'mls'
+    until input == 'e' || input == 'mls'
       input = gets.strip.downcase
       case input.downcase
-      when "exit"
+      when "e"
         exit
       when "mls"
         start_menu
       else
-        puts "Not Valid. Please select type 'MLS' or 'exit': "
+        puts "Not Valid. Please select type 'MLS' or 'e': "
       end
     end
   end
@@ -122,12 +122,12 @@ class Mls2017StandingsCliApp::CLI
     puts "Wins: #{team.wins}"
     puts "Losses: #{team.losses}"
     puts "Ties: #{team.ties}"
-    puts "\n Type 'MLS' to restart CLI or 'exit' to exit:"
+    puts "\n Type 'MLS' to restart CLI or 'e' to exit:"
 
-    until input == 'exit' || input == 'mls'
+    until input == 'e' || input == 'mls'
       input = gets.strip.downcase
       case input.downcase
-      when "exit"
+      when "e"
         exit
       when "mls"
         start_menu
