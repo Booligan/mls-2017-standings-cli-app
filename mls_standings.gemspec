@@ -15,9 +15,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/Booligan/mls-standings-cli-app"
   spec.license       = "MIT"
 
-  spec.bindir        = "exe"
+  gem.files         = `git ls-files`.split($\)
   spec.executables   = ["mls_standings"]
+  gem.name          = "mls_standings"
   spec.require_paths = ["lib"]
+  gem.version       = MlsStandings::VERSION
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "nokogiri", '~> 1.8', '>= 1.8.2'
