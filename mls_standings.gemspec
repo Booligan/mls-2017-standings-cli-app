@@ -7,7 +7,7 @@ require 'mls_standings/version'
 Gem::Specification.new do |spec|
   spec.name          = "mls_standings"
   spec.version       = MlsStandings::VERSION
-  spec.authors       = ["'Alberto Mayanga'"]
+  spec.authors       = ["Alberto Mayanga"]
   spec.email         = ["aamayanga@gmail.com"]
 
   spec.summary       = %q{Command line app to view the table standings of Major League Soccer’s current season}
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ["mls_standings"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.14"
