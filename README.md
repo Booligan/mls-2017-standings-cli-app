@@ -4,30 +4,17 @@ This Ruby gem provides a CLI to view the current standings of teams in Major Lea
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'mls_standings_cli_app'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mls_standings_cli_app
+You can install this gem via ```gem install mls_standings```. The ```mls_standings``` CLI will be installed and you can run ```mls_standings``` to get a live table to Major League Soccer's current season standings.
 
 ## Usage
 
+Run: ```mls_standings``` after installing the gem.
 Drill Down to MLS conference standings and team record.
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'amayanga90-85487'/mls_standings_cli_app.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Booligan/mls-standings-cli-app.
+
+## License
+
+The gem is available as open source under the terms of the [MIT](../LICENSE.md) License.
