@@ -17,4 +17,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Boolig
 
 ## License
 
-The gem is available as open source under the terms of the [MIT](../LICENSE.md) License.
+The gem is available as open source under the terms of the [MIT](https://github.com/Booligan/mls-standings-cli-app/blob/master/LICENSE.md) License.
