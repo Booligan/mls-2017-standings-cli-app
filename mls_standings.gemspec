@@ -15,8 +15,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/Booligan/mls-standings-cli-app"
   gem.license       = "MIT"
 
-  gem.files         = "git ls-files".split($\)
-  spec.bindir        = "bin"
+  gem.bindir        = "bin"
   gem.executables   = ["mls_standings"]
   gem.name          = "mls_standings"
   gem.require_paths = ["lib", "lib/mls_standings"]
