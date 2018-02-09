@@ -1,4 +1,4 @@
-class MlsStandingsCliApp::CLI
+class MlsStandings::CLI
 
   def call
     Scraper.create_teams
