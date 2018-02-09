@@ -1,4 +1,4 @@
-class Scraper
+class  MlsStandings::Scrapper
 
   def self.get_page
     html = open("https://www.mlssoccer.com/standings")
@@ -29,7 +29,7 @@ class Scraper
 
   def self.create_teams
     teams = self.scrape_teams
-    teams.each{|team| Team.create_from_scrape(team)}
+    teams.each{|team|  MlsStandings::Team.create_from_scrape(team)}
   end
 
 end

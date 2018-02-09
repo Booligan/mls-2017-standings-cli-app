@@ -1,5 +1,11 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby 
 require "bundler/setup"
 require "mls_standings"
+# require "./lib/mls_standings"
+
+
+def reload!
+    load_all './lib'
+end
 
 MlsStandings::CLI.new.call

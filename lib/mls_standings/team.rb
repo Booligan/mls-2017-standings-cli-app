@@ -1,4 +1,4 @@
-class Team
+class  MlsStandings::Team
   attr_accessor :name, :games_played, :wins, :losses, :ties
 
   @@all = []

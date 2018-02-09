@@ -1,7 +1,7 @@
 class MlsStandings::CLI
 
   def call
-    Scraper.create_teams
+    MlsStandings::Scrapper.create_teams
     start_menu
   end
 
@@ -38,7 +38,7 @@ class MlsStandings::CLI
     puts "     MLS Eastern Conference".colorize(:blue)
     puts "     **********************".colorize(:blue)
     i = 1
-    teams= Team.eastern_conf
+    teams=  MlsStandings::Team.eastern_conf
     teams.each do |team|
       puts  "#{i}. #{team.name}"
       i += 1
@@ -66,7 +66,7 @@ class MlsStandings::CLI
     puts "     MLS Western Conference".colorize(:red)
     puts "     **********************".colorize(:red)
     i = 1
-    teams = Team.western_conf
+    teams =  MlsStandings::Team.western_conf
     teams.each do |team|
         puts  "#{i}. #{team.name}"
         i += 1
@@ -91,7 +91,7 @@ class MlsStandings::CLI
 
   def east_team_record(input)
     system "clear"
-    team = Team.eastern_conf[input - 1]
+    team =  MlsStandings::Team.eastern_conf[input - 1]
     puts "#{team.name}".colorize(:blue)
     puts "***********************".colorize(:blue)
     puts "Games Played: #{team.games_played}"
@@ -115,7 +115,7 @@ class MlsStandings::CLI
 
   def west_team_record(input)
     system "clear"
-    team = Team.western_conf[input - 1]
+    team =  MlsStandings::Team.western_conf[input - 1]
     puts "#{team.name}".colorize(:red)
     puts "***********************".colorize(:red)
     puts "Games Played: #{team.games_played}"
