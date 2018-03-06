@@ -74,10 +74,10 @@ class MlsStandings::CLI
     puts "\nSelect 1-11 to get more information on the team, 's' to switch conference, or exit:"
     input = nil
 
-    until input == 'e' || input == 's'||input.to_i.between?(1, 11)
+    until input == 'e' || input == 's'||input.to_i.between?(1, 12)
       input = gets.strip.downcase
       case
-      when input.to_i.between?(1, 11)
+      when input.to_i.between?(1, 12)
         west_team_record(input.to_i)
       when input.downcase == "s"
         eastern_conf
