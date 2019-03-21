@@ -17,11 +17,11 @@ class  MlsStandings::Team
   end
 
   def self.eastern_conf
-    self.all[0..10]
+    self.all[0..11]
   end
 
   def self.western_conf
-    self.all[11..22]
+    self.all[12..23]
   end
 
 end

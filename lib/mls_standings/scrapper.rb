@@ -23,7 +23,7 @@ class  MlsStandings::Scrapper
       teams_hash_array << team_hash
     end
       teams_hash_array.delete_at(0)
-      teams_hash_array.delete_at(11)
+      teams_hash_array.delete_at(12)
       teams_hash_array
   end
 
